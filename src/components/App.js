@@ -1,14 +1,30 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
+import axios from 'axios';
+
 import '../stylesheets/App.scss';
 import Button from './Button';
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			songs: [],
+		};
+	}
+
+	componentDidMount() {
+		axios
+			.get('https://s3.us-west-1.amazonaws.com/coding-exercise/songs')
+			.then(({ data }) => this.setState({ songs: data }));
+	}
+
 	render() {
+		console.log('this.state.songs :', this.state.songs);
+
 		return (
 			<div className="App">
 				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
 					<p>
 						Edit <code>src/App.js</code> and save to reload.
 					</p>

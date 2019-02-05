@@ -1,12 +1,8 @@
 @import './variables.scss';
+@import './Button.scss';
 
 .App {
   text-align: center;
-
-  &-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 40vmin;
-  }
 
   &-header {
     background-color: $primary-color;
@@ -21,28 +17,5 @@
   
   &-link {
     color: $secondary-color;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.btn {
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
-  border-radius: 5px;
-  margin-top: 20px;
-  background: rgb(199, 196, 23);
-  border: none;
-
-  &:hover {
-    background: rgb(236, 233, 36);
   }
 }
